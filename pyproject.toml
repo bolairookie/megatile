@@ -1,0 +1,43 @@
+[project]
+name = "megatile"
+description = "Mega kernel implementation based on TileLang"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [{ name = "Megatile Contributors" }]
+license = { text = "MIT" }
+keywords = ["GPU", "Kernel", "TileLang", "Mega Kernel"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: GPU",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "tilelang",
+    "torch",
+    "numpy>=1.23.5",
+]
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["megatile*"]
+
+[tool.ruff]
+line-length = 140
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "W", "F"]
+ignore = ["E501", "E402", "F401"]
+
